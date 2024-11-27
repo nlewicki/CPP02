@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nicolewicki <nicolewicki@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 12:01:51 by nicolewicki       #+#    #+#             */
-/*   Updated: 2024/11/27 15:43:11 by nicolewicki      ###   ########.fr       */
+/*   Created: 2024/11/27 16:21:56 by nicolewicki       #+#    #+#             */
+/*   Updated: 2024/11/27 16:27:13 by nicolewicki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,17 @@ class Fixed
 
     public:
         Fixed(); // constructor
-        ~Fixed(); // destructor
         Fixed( const Fixed & src ); // copy constructor
+        Fixed(const int value); // constructor with int argument
+        Fixed(const float value); // constructor with float argument
+        ~Fixed(); // destructor
         Fixed & operator=( const Fixed & rhs ); // assignation operator
-        int getRawBits( void ) const; // returns the raw value of the fixed point value
-        void setRawBits( int const raw ); // sets the raw value of the fixed point value
+        int getRawBits( void ) const;
+        void setRawBits( int const raw );
+        float toFloat( void ) const;
+        int toInt( void ) const;
 };
+
+std::ostream &operator<<( std::ostream & o, Fixed const & i ); // output stream operator to print the fixed point value
 
 #endif

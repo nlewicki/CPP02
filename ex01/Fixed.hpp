@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolewicki <nicolewicki@student.42.fr>    +#+  +:+       +#+        */
+/*   By: nlewicki <nlewicki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 16:21:56 by nicolewicki       #+#    #+#             */
-/*   Updated: 2024/11/27 16:27:13 by nicolewicki      ###   ########.fr       */
+/*   Updated: 2024/11/28 11:22:02 by nlewicki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ class Fixed
         Fixed & operator=( const Fixed & rhs ); // assignation operator
         int getRawBits( void ) const;
         void setRawBits( int const raw );
-        float toFloat( void ) const;
-        int toInt( void ) const;
+        float toFloat( void ) const; // convert the fixed point value to a floating point value
+        int toInt( void ) const; // convert the fixed point value to an integer value
 };
 
 std::ostream &operator<<( std::ostream & o, Fixed const & i ); // output stream operator to print the fixed point value

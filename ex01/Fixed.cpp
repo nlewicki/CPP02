@@ -3,33 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolewicki <nicolewicki@student.42.fr>    +#+  +:+       +#+        */
+/*   By: nlewicki <nlewicki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 16:21:50 by nicolewicki       #+#    #+#             */
-/*   Updated: 2024/11/27 16:32:52 by nicolewicki      ###   ########.fr       */
+/*   Updated: 2024/11/28 11:28:20 by nlewicki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed() : fixedPointValue(0)
+Fixed::Fixed() : fixedPointValue(0) // initialize the fixed point value to 0
 {
     std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed( const Fixed & src )
+Fixed::Fixed( const Fixed & src ) // copy constructor
 {
     std::cout << "Copy constructor called" << std::endl;
-    *this = src;
+    *this = src; // delegate the assignation operator to copy the fixed point value
 }
 
-Fixed::Fixed(const int intvalue) // constructor with int argument
+Fixed::Fixed(const int intvalue) // constructor with int argument (essentially multiplying by 2^fractionalBits)
 {
     std::cout << "Int constructor called" << std::endl;
     this->fixedPointValue = intvalue << this->fractionalBits;
 }
 
-Fixed::Fixed(const float floatvalue) // constructor with float argument
+Fixed::Fixed(const float floatvalue) // constructor with float argument (multiply by 2^fractionalBits and round to the nearest integer)
 {
     std::cout << "Float constructor called" << std::endl;
     this->fixedPointValue = roundf(floatvalue * (1 << this->fractionalBits));
@@ -40,7 +40,7 @@ Fixed::~Fixed()
     std::cout << "Destructor called" << std::endl;
 }
 
-Fixed & Fixed::operator=( const Fixed & rhs )
+Fixed & Fixed::operator=( const Fixed & rhs ) // assignation operator
 {
     std::cout << "Copy assignation operator called" << std::endl;
     if (this != &rhs)

@@ -6,7 +6,7 @@
 /*   By: nlewicki <nlewicki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:05:15 by nlewicki          #+#    #+#             */
-/*   Updated: 2024/11/29 13:36:14 by nlewicki         ###   ########.fr       */
+/*   Updated: 2024/12/02 11:58:17 by nlewicki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ bool bsp(Point const a, Point const b, Point const c, Point const point)
 
 	angle = calculateAngle(a, b, c, point);
 
-	std::cout << "angle: " << angle << std::endl;
+	// std::cout << "angle: " << angle << std::endl;
 
 	return (std::abs(angle - 2 * M_PI) < 0.0001f);
 }

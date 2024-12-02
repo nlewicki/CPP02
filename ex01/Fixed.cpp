@@ -6,7 +6,7 @@
 /*   By: nlewicki <nlewicki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 16:21:50 by nicolewicki       #+#    #+#             */
-/*   Updated: 2024/11/28 11:28:20 by nlewicki         ###   ########.fr       */
+/*   Updated: 2024/12/02 11:47:23 by nlewicki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ Fixed::Fixed( const Fixed & src ) // copy constructor
 Fixed::Fixed(const int intvalue) // constructor with int argument (essentially multiplying by 2^fractionalBits)
 {
     std::cout << "Int constructor called" << std::endl;
-    this->fixedPointValue = intvalue << this->fractionalBits;
+    this->fixedPointValue = intvalue << this->fractionalBits; // shift the integer value to the left by the number of fractional bits to get the fixed point value
 }
 
 Fixed::Fixed(const float floatvalue) // constructor with float argument (multiply by 2^fractionalBits and round to the nearest integer)
 {
     std::cout << "Float constructor called" << std::endl;
-    this->fixedPointValue = roundf(floatvalue * (1 << this->fractionalBits));
+    this->fixedPointValue = roundf(floatvalue * (1 << this->fractionalBits)); // multiply the float value by 2^fractionalBits and round to the nearest integer to get the fixed point value
 }
 
 Fixed::~Fixed()

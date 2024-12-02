@@ -6,7 +6,7 @@
 /*   By: nlewicki <nlewicki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 11:30:21 by nlewicki          #+#    #+#             */
-/*   Updated: 2024/11/28 12:04:46 by nlewicki         ###   ########.fr       */
+/*   Updated: 2024/12/02 11:56:53 by nlewicki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ class Fixed
         */
         Fixed & operator--(); // pre-decrement operator (--a)
         Fixed operator--(int); // post-decrement operator (a--)
+        // in our case, increment by the smallest representable value (1/256) and decrement by the smallest representable value (1/256) = 0.00390625
 
         static Fixed &min(Fixed &a, Fixed &b); // returns the smallest of two modifiable Fixed values
         static const Fixed &min(const Fixed &a, const Fixed &b); // returns the smallest of two read-only Fixed values

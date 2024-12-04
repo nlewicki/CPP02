@@ -6,7 +6,7 @@
 /*   By: nlewicki <nlewicki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 11:30:21 by nlewicki          #+#    #+#             */
-/*   Updated: 2024/12/02 11:56:53 by nlewicki         ###   ########.fr       */
+/*   Updated: 2024/12/04 11:45:38 by nlewicki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ class Fixed
         Fixed operator++(int); // post-increment operator (a++)
         /*
         Fixed a(5);       // Suppose a represents the value 5
-        Fixed b = a++;    // a is assigned to b first, then incremented
-        // a = 6, b = 5
+        Fixed b = ++a;    // a is assigned to b first, then incremented
+        // a = 6, b = 6
         */
         Fixed & operator--(); // pre-decrement operator (--a)
         Fixed operator--(int); // post-decrement operator (a--)
